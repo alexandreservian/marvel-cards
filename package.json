@@ -6,15 +6,22 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "nprogress": "^0.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "coverage": "npm test -- --coverage --no-cache",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "flow-typed": "flow-typed install"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +37,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react-hooks": "^2.5.0"
   }
 }
