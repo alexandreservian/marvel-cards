@@ -1,0 +1,23 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:flowtype/recommended"],
+  "plugins": ["prettier", "flowtype", "import", "import/resolver"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.js", "**/*.spec.js", "src/setupTests.js"] }
+    ],
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}
