@@ -1,12 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import RoutersApp from 'routes';
+import store from 'state/store';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <RoutersApp />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <RoutersApp />
+      </BrowserRouter>
+    </Provider>
   );
 };
 
