@@ -1,0 +1,4 @@
+const REDUCER = 'list-card';
+const API_SEARCH_HEROES = `${REDUCER}:API_SEARCH_HEROES`;
+
+export { REDUCER, API_SEARCH_HEROES };
