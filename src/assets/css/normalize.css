@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('../fonts/Roboto-Regular-webfont.eot');
+  src: url('../fonts/Roboto-Regular-webfont.eot?iefix') format('eot'),
+    url('../fonts/Roboto-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'roboto-medium';
+  src: url('../fonts/Roboto-Medium-webfont.eot');
+  src: url('../fonts/Roboto-Medium-webfont.eot?iefix') format('eot'),
+    url('../fonts/Roboto-Medium-webfont.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+header,
+nav,
+footer,
+section,
+article,
+aside {
+  display: block;
+}
+img {
+  border: none;
+}
+p,
+a,
+span,
+label,
+td,
+li,
+dt,
+dd {
+  color: #000;
+  font: 1em/1.3em 'roboto-regular';
+}
+html,
+body {
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  background: #fff;
+  font-family: 'roboto-regular';
+  font-size: 14px;
+  width: 100%;
+}
+strong,
+b {
+  color: #fff;
+  font-family: 'roboto-medium';
+  font-size: 1.1em;
+}
+strong a,
+b a {
+  font-family: 'roboto-medium';
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-family: 'roboto-medium';
+  font-weight: normal;
+  line-height: 1.35em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 1.7em;
+}
+h2 {
+  font-size: 1.4em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1em;
+}
+h5 {
+  font-size: 0.9em;
+}
+h6 {
+  font-size: 0.8em;
+}
+a {
+  text-decoration: none;
+}
+small {
+  font-size: 0.8em;
+}
+abbr {
+  border-bottom: 1px dotted #000;
+}
+code {
+  background: #ccc;
+  border: 1px solid #000;
+  font: 0.9em/1.15em 'roboto-regular';
+  padding: 2px 4px;
+}
+address {
+  font-style: normal;
+}
+blockquote {
+  border-left: 5px solid #000;
+  padding: 8px 10px;
+}
+blockquote p:last-child {
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0 0 0 30px;
+}
+ul ul {
+  margin: 10px 0;
+}
+dt {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
+}
+thead tr {
+  background: #fff;
+}
+thead th {
+  color: #000;
+  font: 1em/1.2em 'roboto-regular';
+  padding: 19px 12px;
+  text-align: left;
+}
+tbody td,
+tfoot td {
+  padding: 4px;
+}
+tfoot td {
+  font: bold 13px/18px 'roboto-regular';
+}
+select,
+textarea,
+input[type='text'],
+input[type='password'],
+input[type='datetime'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='color'] {
+  background: none;
+  border: 1px solid #000;
+  color: #000;
+  display: block;
+  font-family: 'roboto-regular';
+  font-size: 0.9em;
+  height: 30px;
+  outline: none;
+  width: 100%;
+}
+::-webkit-input-placeholder {
+  color: #000;
+}
+::-moz-placeholder {
+  color: #000;
+}
+:-moz-placeholder {
+  color: #000;
+}
+:-ms-input-placeholder {
+  color: #000;
+}
+label {
+  color: #000;
+  display: block;
+  margin: 0;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin: 0 3px 0 0;
+  height: 14px;
+  width: 14px;
+}
+fieldset {
+  border: 1px solid #000;
+  padding: 10px;
+}
+legend {
+  color: #000;
+}
+select {
+  padding: 3px 0;
+  width: 100%;
+}
+select[multiple] {
+  height: auto;
+}
+textarea {
+  font-family: 'roboto-regular';
+  height: auto;
+  resize: none;
+}
+input[type='submit'],
+button {
+  border: none;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+}
+button {
+  background: none;
+}
+
+#root {
+  height: 100%;
+}
