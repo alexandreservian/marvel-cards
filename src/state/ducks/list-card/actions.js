@@ -4,9 +4,10 @@ import * as types from './types';
 const searchCards = createAction(
   types.SEARCH_CARDS,
   () => {},
-  (offset = 0, limit = 20) => ({
+  (offset = 0, limit = 20, name = '') => ({
     offset,
-    limit
+    limit,
+    name
   })
 );
 
