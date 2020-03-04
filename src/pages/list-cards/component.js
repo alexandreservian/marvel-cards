@@ -1,6 +1,7 @@
 // @flow
 import React, { useEffect, memo } from 'react';
-import { Link } from 'react-router-dom';
+import Card from 'components/card';
+import { Content, List } from './style';
 type Props = {
   cards: Array<any>,
   searchCards: Function
@@ -8,20 +9,17 @@ type Props = {
 
 const ListCards = ({ cards, searchCards }: Props): React.Node => {
   useEffect(() => {
-    searchCards();
+    searchCards({ limit: 23 });
   }, [searchCards]);
 
   return (
-    <div>
-      <ul>
+    <Content>
+      <List>
         {cards.map(({ id, name, thumbnail }) => (
-          <li key={id}>
-            <img src={thumbnail} alt={name} />
-            <Link to={`card-list/${id}`}>{name}</Link>
-          </li>
+          <Card key={id} id={id} name={name} thumbnail={thumbnail} />
         ))}
-      </ul>
-    </div>
+      </List>
+    </Content>
   );
 };
 
