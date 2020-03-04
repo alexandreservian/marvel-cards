@@ -14,7 +14,8 @@ function* searchCard({ meta }) {
       session: types.API_SEARCH_CARD,
       params: { apikey },
       transformResponse: transformResponseItem
-    }
+    },
+    meta: { ...meta }
   });
 }
 
