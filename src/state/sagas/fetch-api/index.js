@@ -1,22 +1,23 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import api from 'utils/api';
 
-function* fecthSuccess(session, dataResponse, meta, message = '') {
-  yield put({ type: `${session}_SUCCESS`, payload: dataResponse, meta });
+function* fecthSuccess(session, data, meta) {
+  yield put({ type: `${session}_SUCCESS`, payload: data, meta });
 }
 
-function* fecthError(session, error, meta, message = 'Ocorreu algum erro na aplicação') {
+function* fecthError(session, error, meta) {
   yield put({ type: `${session}_FAILURE`, error, meta });
 }
 
 function* fecthApi({ payload, meta = '' }) {
-  const { url, method, data, session, transformResponse = data => data } = payload;
+  const { url, method, data, session, transformResponse = data => data, params } = payload;
   try {
     yield put({ type: `${session}_REQUEST`, meta });
     const response = yield call(api, {
       url,
       method,
       data,
+      params,
       transformResponse,
       responseType: 'json',
       headers: {
@@ -24,14 +25,13 @@ function* fecthApi({ payload, meta = '' }) {
       }
     });
     const { data: dataResponse } = response;
-    const { ExecutadoComSucesso, Mensagem } = dataResponse;
-
-    return ExecutadoComSucesso || ExecutadoComSucesso === undefined
-      ? yield fecthSuccess(session, dataResponse, meta, Mensagem)
-      : yield fecthError(session, { message: Mensagem }, meta, Mensagem);
+    yield fecthSuccess(session, dataResponse, meta);
   } catch (error) {
-    yield put({ type: `${session}_FAILURE`, error, meta });
-    yield fecthError(session, error, meta);
+    const {
+      response: { data: dataError, status }
+    } = error;
+    const statusError = { data: dataError, status };
+    yield fecthError(session, statusError, meta);
   }
 }
 

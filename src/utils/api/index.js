@@ -1,11 +1,8 @@
 import axios from 'axios';
 import { apiConfig } from 'config-project';
 
-const { baseURL, apikey } = apiConfig;
+const { baseURL } = apiConfig;
 
 export default axios.create({
-  baseURL,
-  params: {
-    apikey
-  }
+  baseURL
 });

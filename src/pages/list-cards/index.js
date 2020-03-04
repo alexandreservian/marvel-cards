@@ -1,7 +1,18 @@
-import React, { memo } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actions, selectors } from 'state/ducks/list-card';
+import ListCards from './component';
 
-const ListCards = () => {
-  return <div />;
-};
+const mapStateToProps = state => ({
+  cards: selectors.getAllListCards(state)
+});
 
-export default memo(ListCards);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      searchCards: actions.searchCards
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListCards);

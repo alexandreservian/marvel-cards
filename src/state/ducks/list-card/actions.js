@@ -1,10 +1,9 @@
 import { createAction } from 'redux-actions';
 import * as types from './types';
 
-const searchHeroes = createAction('FECTH_API', () => ({
-  url: 'characters',
-  method: 'get',
-  session: types.API_SEARCH_HEROES
+const searchCards = createAction(types.SEARCH_CARDS, (offset = 0, limit = 20) => ({
+  offset,
+  limit
 }));
 
-export { searchHeroes };
+export { searchCards };
