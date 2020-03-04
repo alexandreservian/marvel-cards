@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 import * as types from '../../types';
 import { apiConfig } from 'config-project';
-import transformResponse from 'utils/transform-response';
+import transformResponseList from 'utils/transform-response-list';
 const { apikey } = apiConfig;
 
 function* searchCards({ payload, meta }) {
@@ -12,7 +12,7 @@ function* searchCards({ payload, meta }) {
       method: 'get',
       session: types.API_SEARCH_CARDS,
       params: { apikey },
-      transformResponse
+      transformResponse: transformResponseList
     }
   });
 }
