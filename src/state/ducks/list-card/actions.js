@@ -5,9 +5,9 @@ const searchCards = ({ limit = 20 } = {}) =>
   createAction(
     types.SEARCH_CARDS,
     () => {},
-    ({ name = '', currentPage = 0 } = {}) => ({
+    ({ nameStartsWith = '', currentPage = 0 } = {}) => ({
       limit,
-      name,
+      nameStartsWith,
       currentPage
     })
   );

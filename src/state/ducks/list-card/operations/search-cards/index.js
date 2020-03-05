@@ -5,10 +5,10 @@ import transformResponseList from 'utils/transform-response-list';
 const { apikey } = apiConfig;
 
 function* searchCards({ meta }) {
-  const { limit, name, currentPage } = meta;
+  const { limit, nameStartsWith, currentPage } = meta;
   const offset = limit * currentPage;
   const params = { apikey, offset, limit };
-  const paramsVarieble = name ? { ...params, name } : { ...params };
+  const paramsVarieble = nameStartsWith ? { ...params, nameStartsWith } : { ...params };
   yield put({
     type: 'FECTH_API',
     payload: {
