@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import FadeIn from 'react-lazyload-fadein';
-import { Content, ContentIn, BoxImage, Title } from './style';
+import { Content, ContentIn, BoxImage, BoxTitle, Title } from './style';
 type Props = {
   id: Number,
   name: String,
@@ -18,7 +18,9 @@ const Card = ({ id, name, thumbnail }: Props): React.Node => {
             {onload => (
               <BoxImage>
                 <img onLoad={onload} src={thumbnail} alt={name} className="image" />
-                <Title>{name}</Title>
+                <BoxTitle>
+                  <Title>{name}</Title>
+                </BoxTitle>
               </BoxImage>
             )}
           </FadeIn>
