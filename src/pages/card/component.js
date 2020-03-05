@@ -1,6 +1,9 @@
 // @flow
 import React, { useEffect, memo } from 'react';
 import { useParams } from 'react-router-dom';
+import Header from 'components/header';
+import ButtonBackPage from 'components/button-back-page';
+import { Content } from './style';
 
 type Props = {
   card: Object<any>,
@@ -14,7 +17,13 @@ const Card = ({ card, searchCard }: Props): React.Node => {
     searchCard(id);
   }, [searchCard, id]);
 
-  return <div />;
+  return (
+    <Content>
+      <Header>
+        <ButtonBackPage />
+      </Header>
+    </Content>
+  );
 };
 
 export default memo(Card);
