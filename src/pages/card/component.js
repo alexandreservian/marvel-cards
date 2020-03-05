@@ -1,15 +1,14 @@
 // @flow
 import React, { useEffect, memo } from 'react';
+import { useParams } from 'react-router-dom';
 
 type Props = {
-  match: Object<any>,
+  card: Object<any>,
   searchCard: Function
 };
 
-const Card = ({ card, match, searchCard }: Props): React.Node => {
-  const {
-    params: { id }
-  } = match;
+const Card = ({ card, searchCard }: Props): React.Node => {
+  const { id } = useParams();
 
   useEffect(() => {
     searchCard(id);
