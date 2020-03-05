@@ -2,6 +2,7 @@
 import React, { useEffect, memo } from 'react';
 import { useQueryParam, NumberParam, StringParam } from 'use-query-params';
 import List from 'components/list';
+import Header from 'components/header';
 import Search from 'components/search';
 import LoadingPage from 'components/loading-page';
 import Pagination from 'components/pagination';
@@ -31,7 +32,9 @@ const ListCards = ({ cards, searchCards, totalPages, loading }: Props): React.No
 
   return (
     <Content>
-      <Search onSearch={handleOnSearch(setPage, setSearch)} defaultValue={search} />
+      <Header>
+        <Search onSearch={handleOnSearch(setPage, setSearch)} defaultValue={search} />
+      </Header>
       <List cards={cards} visible={!loading} />
       <LoadingPage visible={loading} />
       <Pagination

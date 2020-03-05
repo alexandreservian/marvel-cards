@@ -1,16 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Content = styled.div`
-  background: ${({ theme }) => theme.colors.bgPagination};
   display: flex;
   justify-content: center;
   align-items: center;
   height: 55px;
-  left: 0;
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: 2;
 `;
 
 export const BoxSearch = styled.div`
