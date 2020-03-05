@@ -1,7 +1,8 @@
 // @flow
 import React, { useEffect, memo } from 'react';
-import { useQueryParam, NumberParam } from 'use-query-params';
+import { useQueryParam, NumberParam, StringParam } from 'use-query-params';
 import List from 'components/list';
+import Search from 'components/search';
 import LoadingPage from 'components/loading-page';
 import Pagination from 'components/pagination';
 import { Content } from './style';
@@ -12,19 +13,25 @@ type Props = {
   loading: Boolean
 };
 
-const handleOnPageChange = setPage => ({ selected }) => setPage(selected + 1);
+const handleOnPageChange = (setPage = () => {}) => ({ selected }) => setPage(selected + 1);
+const handleOnSearch = (setPage = () => {}, setSearch = () => {}) => value => {
+  setPage(1);
+  setSearch(value);
+};
 
 const ListCards = ({ cards, searchCards, totalPages, loading }: Props): React.Node => {
   const [page, setPage] = useQueryParam('page', NumberParam);
+  const [search, setSearch] = useQueryParam('q', StringParam);
   const currentPage = page ? page - 1 : 0;
-  const visibledPagination = cards.length ? true : false;
+  const visibledPagination = totalPages ? true : false;
 
   useEffect(() => {
-    searchCards({ currentPage });
-  }, [searchCards, currentPage]);
+    searchCards({ currentPage, nameStartsWith: search });
+  }, [searchCards, currentPage, search]);
 
   return (
     <Content>
+      <Search onSearch={handleOnSearch(setPage, setSearch)} defaultValue={search} />
       <List cards={cards} visible={!loading} />
       <LoadingPage visible={loading} />
       <Pagination
