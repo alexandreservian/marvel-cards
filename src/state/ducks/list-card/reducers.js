@@ -8,7 +8,7 @@ export const INITIAL_STATE = {
   error: null
 };
 
-const success = (state, { payload }) => ({ ...state, data: { ...payload } });
+const success = (state, { payload }) => ({ ...state, data: { ...state.data, ...payload } });
 
 const reducer = handleActions(
   {

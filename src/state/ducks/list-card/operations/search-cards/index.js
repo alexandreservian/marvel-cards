@@ -5,7 +5,8 @@ import transformResponseList from 'utils/transform-response-list';
 const { apikey } = apiConfig;
 
 function* searchCards({ meta }) {
-  const { offset, limit, name } = meta;
+  const { limit, name, currentPage } = meta;
+  const offset = limit * currentPage;
   const params = { apikey, offset, limit };
   const paramsVarieble = name ? { ...params, name } : { ...params };
   yield put({

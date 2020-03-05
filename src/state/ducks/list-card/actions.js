@@ -1,14 +1,15 @@
 import { createAction } from 'redux-actions';
 import * as types from './types';
 
-const searchCards = createAction(
-  types.SEARCH_CARDS,
-  () => {},
-  ({ offset = 0, limit = 20, name = '' }) => ({
-    offset,
-    limit,
-    name
-  })
-);
+const searchCards = ({ limit = 20 } = {}) =>
+  createAction(
+    types.SEARCH_CARDS,
+    () => {},
+    ({ name = '', currentPage = 0 } = {}) => ({
+      limit,
+      name,
+      currentPage
+    })
+  );
 
 export { searchCards };
