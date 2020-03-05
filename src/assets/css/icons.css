@@ -41,3 +41,6 @@
 .icon-chevrons-right:before {
   content: '\e905';
 }
+.icon-search:before {
+  content: '\e906';
+}
