@@ -13,7 +13,7 @@ const Card = ({ id, name, thumbnail }: Props): React.Node => {
   return (
     <Content>
       <ContentIn>
-        <Link to={`card-list/${id}`} className="link">
+        <Link to={`../card-list/${id}`} className="link">
           <FadeIn easing={'ease-out'}>
             {onload => (
               <BoxImage>
