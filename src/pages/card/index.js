@@ -4,7 +4,8 @@ import { actions, selectors } from 'state/ducks/card';
 import Card from './component';
 
 const mapStateToProps = state => ({
-  card: selectors.getCard(state)
+  card: selectors.getCard(state),
+  loadingDescription: selectors.getLoadingDescription(state)
 });
 
 const mapDispatchToProps = dispatch =>
