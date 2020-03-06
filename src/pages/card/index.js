@@ -5,7 +5,10 @@ import Card from './component';
 
 const mapStateToProps = state => ({
   card: selectors.getCard(state),
-  loadingDescription: selectors.getLoadingDescription(state)
+  loadingDescription: selectors.getLoadingDescription(state),
+  comics: selectors.getAllComics(state),
+  events: selectors.getAllEvents(state),
+  series: selectors.getAllSeries(state)
 });
 
 const mapDispatchToProps = dispatch =>
