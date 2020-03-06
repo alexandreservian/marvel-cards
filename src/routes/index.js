@@ -12,6 +12,9 @@ const RoutersApp = () => {
         <Redirect exact from="/" to="/card-list" />
         <Route exact path="/card-list" component={ListCards} />
         <Route exact path="/card-list/:id" component={Card} />
+        <Route exact path="/card-list/:id/comics" component={Card} />
+        <Route exact path="/card-list/:id/events" component={Card} />
+        <Route exact path="/card-list/:id/series" component={Card} />
       </Switch>
     </Suspense>
   );
