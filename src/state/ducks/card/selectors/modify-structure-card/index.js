@@ -1,3 +1,5 @@
+import convertUrlArrayToHash from 'utils/convert-url-array-to-hash';
+
 const modifyStructureCard = (card = {}) => {
   const {
     id,
@@ -6,7 +8,7 @@ const modifyStructureCard = (card = {}) => {
     urls,
     thumbnail: { path, extension }
   } = card;
-  const urlsObj = urls.reduce((acc, { type, url }) => ({ ...acc, [type]: url }), {});
+  const urlsObj = convertUrlArrayToHash(urls);
   return { id, name, description, thumbnail: `${path}.${extension}`, ...urlsObj };
 };
 
