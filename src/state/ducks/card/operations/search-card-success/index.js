@@ -4,17 +4,26 @@ import * as actions from '../../actions';
 
 function* searchCardSuccess({ meta }) {
   const { id } = meta;
+  const limit = 5;
   yield put(
-    actions.searchComplementsCard({ type: types.API_SEARCH_COMICS, endpoint: 'comics' })({ id })
+    actions.searchComplementsCard({ type: types.API_SEARCH_COMICS, endpoint: 'comics', limit })({
+      id
+    })
   );
   yield put(
-    actions.searchComplementsCard({ type: types.API_SEARCH_EVENTS, endpoint: 'events' })({ id })
+    actions.searchComplementsCard({ type: types.API_SEARCH_EVENTS, endpoint: 'events', limit })({
+      id
+    })
   );
   yield put(
-    actions.searchComplementsCard({ type: types.API_SEARCH_SERIES, endpoint: 'series' })({ id })
+    actions.searchComplementsCard({ type: types.API_SEARCH_SERIES, endpoint: 'series', limit })({
+      id
+    })
   );
   yield put(
-    actions.searchComplementsCard({ type: types.API_SEARCH_STORIES, endpoint: 'stories' })({ id })
+    actions.searchComplementsCard({ type: types.API_SEARCH_STORIES, endpoint: 'stories', limit })({
+      id
+    })
   );
 }
 
