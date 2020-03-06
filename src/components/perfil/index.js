@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import visibleComponentHoc from 'components/visible-component-hoc';
 import LinkMoreInformation from 'components/link-more-information';
 import ThumbnailPerfil from 'components/thumbnail-perfil';
-import { Content, Box, Title, BoxDescription, BoxLinks } from './style';
+import { Content, BoxImage, Box, Title, BoxDescription, BoxLinks } from './style';
 
 type Props = {
   name: String,
@@ -17,9 +17,9 @@ type Props = {
 const Perfil = ({ name, description, thumbnail, detail, wiki, comiclink }: Props): React.Node => {
   return (
     <Content>
-      <Box>
+      <BoxImage>
         <ThumbnailPerfil src={thumbnail} alt={name} />
-      </Box>
+      </BoxImage>
       <Box>
         <Title>{name}</Title>
         <BoxDescription>{description}</BoxDescription>
