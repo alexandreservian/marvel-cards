@@ -6,7 +6,8 @@ const modifyStructureCard = (card = {}) => {
     urls,
     thumbnail: { path, extension }
   } = card;
-  return { id, name, description, urls: [...urls], thumbnail: `${path}.${extension}` };
+  const urlsObj = urls.reduce((acc, { type, url }) => ({ ...acc, [type]: url }), {});
+  return { id, name, description, thumbnail: `${path}.${extension}`, ...urlsObj };
 };
 
 export default modifyStructureCard;
