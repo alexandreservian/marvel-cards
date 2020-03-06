@@ -26,6 +26,15 @@
 .icon-arrow-left:before {
   content: '\e900';
 }
+.icon-book-open:before {
+  content: '\e907';
+}
+.icon-bookmark:before {
+  content: '\e909';
+}
+.icon-calendar:before {
+  content: '\e90a';
+}
 .icon-check-circle:before {
   content: '\e901';
 }
@@ -40,6 +49,15 @@
 }
 .icon-chevrons-right:before {
   content: '\e905';
+}
+.icon-edit-3:before {
+  content: '\e90b';
+}
+.icon-layers:before {
+  content: '\e90c';
+}
+.icon-plus-circle:before {
+  content: '\e908';
 }
 .icon-search:before {
   content: '\e906';
