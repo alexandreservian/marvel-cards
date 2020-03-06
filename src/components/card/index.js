@@ -2,7 +2,8 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import FadeIn from 'react-lazyload-fadein';
-import { Content, ContentIn, BoxImage, BoxTitle, Title } from './style';
+import Hexagon from 'components/hexagon';
+import { Content, BoxImage, BoxTitle, Title } from './style';
 type Props = {
   id: Number,
   name: String,
@@ -12,7 +13,7 @@ type Props = {
 const Card = ({ id, name, thumbnail }: Props): React.Node => {
   return (
     <Content>
-      <ContentIn>
+      <Hexagon>
         <Link to={`../card-list/${id}`} className="link">
           <FadeIn easing={'ease-out'}>
             {onload => (
@@ -25,7 +26,7 @@ const Card = ({ id, name, thumbnail }: Props): React.Node => {
             )}
           </FadeIn>
         </Link>
-      </ContentIn>
+      </Hexagon>
     </Content>
   );
 };
