@@ -57,6 +57,7 @@ export const Title = styled.h3`
   margin: 10px 0 0 0;
   padding: 0 0 0 10px;
   text-transform: none;
+  word-break: break-word;
 
   @media (max-width: 1225px) {
     font-size: 1.1em;

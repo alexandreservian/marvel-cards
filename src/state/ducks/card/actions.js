@@ -11,10 +11,10 @@ const searchComplementsCard = ({ type = '', endpoint = '' } = {}) => ({ limit = 
   createAction(
     types.SEARCH_COMPLEMENTS_CARD,
     () => {},
-    ({ id = 0, offset = 0 } = {}) => ({
+    ({ id = 0, currentPage = 0 } = {}) => ({
       type,
       id,
-      offset,
+      currentPage,
       limit,
       endpoint
     })

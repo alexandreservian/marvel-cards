@@ -5,13 +5,13 @@ import Card from './component';
 
 const mapStateToProps = state => ({
   card: selectors.getCard(state),
-  loadingDescription: selectors.getLoadingDescription(state),
-  comics: selectors.getAllComics(state),
-  events: selectors.getAllEvents(state),
-  series: selectors.getAllSeries(state),
-  hasMoreComics: selectors.hasMoreComics(state, 6),
-  hasMoreEvents: selectors.hasMoreEvents(state, 6),
-  hasMoreSeries: selectors.hasMoreSeries(state, 6)
+  loadingDescription: selectors.getLoadingCollection(state, { collection: 'description' }),
+  comics: selectors.getAllCollection(state, { collection: 'comics' }),
+  events: selectors.getAllCollection(state, { collection: 'events' }),
+  series: selectors.getAllCollection(state, { collection: 'series' }),
+  hasMoreComics: selectors.hasMoreCollection(state, { collection: 'comics', limit: 6 }),
+  hasMoreEvents: selectors.hasMoreCollection(state, { collection: 'events', limit: 6 }),
+  hasMoreSeries: selectors.hasMoreCollection(state, { collection: 'series', limit: 6 })
 });
 
 const mapDispatchToProps = dispatch =>

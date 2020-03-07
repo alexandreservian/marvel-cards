@@ -5,7 +5,7 @@ import ListCards from './component';
 
 const mapStateToProps = state => ({
   cards: selectors.getAllListCards(state),
-  totalPages: selectors.getTotalPages(state),
+  totalPages: selectors.getTotalPagesCard(state),
   loading: selectors.getLoading(state)
 });
 

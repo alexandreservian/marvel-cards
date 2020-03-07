@@ -27,18 +27,14 @@ export const List = styled.ul`
   margin: 15px 0 0 0;
   list-style: none;
   padding: 0;
-
-  @media (max-width: 1040px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
 `;
 
 export const Item = styled.li`
-  padding: 0 5px;
+  padding: 0 5px 30px;
   width: ${100 / 6}%;
 
   @media (max-width: 1040px) {
-    padding: 0 5px 20px;
     width: ${100 / 3}%;
   }
 

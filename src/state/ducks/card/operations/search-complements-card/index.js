@@ -4,7 +4,8 @@ import transformResponseList from 'utils/transform-response-list';
 const { apikey } = apiConfig;
 
 function* searchComplementsCard({ meta }) {
-  const { type, id, offset, limit, endpoint } = meta;
+  const { type, id, currentPage, limit, endpoint } = meta;
+  const offset = limit * currentPage;
   yield put({
     type: 'FECTH_API',
     payload: {
