@@ -24,13 +24,29 @@ export const BoxImage = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 345px;
+  height: 288px;
   .image {
     display: block;
     height: auto;
     max-width: 100%;
     width: 100%;
     transition: all 0.2s;
+  }
+
+  @media (max-width: 1225px) {
+    height: 228px;
+  }
+
+  @media (max-width: 1040px) {
+    height: 462px;
+  }
+
+  @media (max-width: 480px) {
+    height: 298px;
+  }
+
+  @media (max-width: 400px) {
+    height: 192px;
   }
 `;
 
@@ -41,4 +57,12 @@ export const Title = styled.h3`
   margin: 10px 0 0 0;
   padding: 0 0 0 10px;
   text-transform: none;
+
+  @media (max-width: 1225px) {
+    font-size: 1.1em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9em;
+  }
 `;

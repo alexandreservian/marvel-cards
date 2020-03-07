@@ -32,7 +32,7 @@ export const Link = styled.a`
     left: 0;
     width: 100%;
     height: 2px;
-    transform: translate3d(-101%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
   }
 

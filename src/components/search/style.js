@@ -4,6 +4,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 5px;
   height: 55px;
   width: 100%;
 `;
