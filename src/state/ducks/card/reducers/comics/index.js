@@ -1,5 +1,7 @@
 import { handleActions } from 'redux-actions';
 import withLoadable from 'state/hor/with-loadable';
+import withResetState from 'state/hor/with-reset-state';
+import pipe from 'utils/pipe';
 import * as types from '../../types';
 
 export const INITIAL_STATE = {
@@ -17,4 +19,7 @@ const reducer = handleActions(
   INITIAL_STATE
 );
 
-export default withLoadable(types.API_SEARCH_COMICS)(reducer);
+const loadable = withLoadable(types.API_SEARCH_COMICS);
+const reset = withResetState(types.RESET_COMICS, INITIAL_STATE);
+
+export default pipe(loadable, reset)(reducer);

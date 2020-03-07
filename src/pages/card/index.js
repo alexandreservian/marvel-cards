@@ -17,7 +17,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      searchCard: actions.searchCard
+      searchCard: actions.searchCard,
+      resetCard: actions.resetCard
     },
     dispatch
   );

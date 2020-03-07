@@ -12,7 +12,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      searchCards: actions.searchCards({ limit: 23 })
+      searchCards: actions.searchCards({ limit: 23 }),
+      resetCards: actions.resetCards
     },
     dispatch
   );

@@ -18,7 +18,8 @@ type Props = {
   series?: Array<any>,
   hasMoreComics: Boolean,
   hasMoreEvents: Boolean,
-  hasMoreSeries: Boolean
+  hasMoreSeries: Boolean,
+  resetCard: Function
 };
 
 const Card = ({
@@ -30,7 +31,8 @@ const Card = ({
   series,
   hasMoreComics,
   hasMoreEvents,
-  hasMoreSeries
+  hasMoreSeries,
+  resetCard
 }: Props): React.Node => {
   const { id } = useParams();
   const visibleComics = !!comics.length;
@@ -39,7 +41,8 @@ const Card = ({
 
   useEffect(() => {
     searchCard(id);
-  }, [searchCard, id]);
+    return () => resetCard();
+  }, [searchCard, resetCard, id]);
 
   return (
     <Content>

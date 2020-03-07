@@ -12,4 +12,6 @@ const searchCards = ({ limit = 20 } = {}) =>
     })
   );
 
-export { searchCards };
+const resetCards = createAction(types.RESET_CARDS);
+
+export { searchCards, resetCards };

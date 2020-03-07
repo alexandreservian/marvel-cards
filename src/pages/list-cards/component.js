@@ -11,7 +11,8 @@ type Props = {
   cards: Array<any>,
   searchCards: Function,
   totalPages: Number,
-  loading: Boolean
+  loading: Boolean,
+  resetCards: Function
 };
 
 const handleOnPageChange = (setPage = () => {}) => ({ selected }) => setPage(selected + 1);
@@ -20,7 +21,7 @@ const handleOnSearch = (setPage = () => {}, setSearch = () => {}) => value => {
   setSearch(value);
 };
 
-const ListCards = ({ cards, searchCards, totalPages, loading }: Props): React.Node => {
+const ListCards = ({ cards, searchCards, totalPages, loading, resetCards }: Props): React.Node => {
   const [page, setPage] = useQueryParam('page', NumberParam);
   const [search, setSearch] = useQueryParam('q', StringParam);
   const currentPage = page ? page - 1 : 0;
@@ -28,7 +29,8 @@ const ListCards = ({ cards, searchCards, totalPages, loading }: Props): React.No
 
   useEffect(() => {
     searchCards({ currentPage, nameStartsWith: search });
-  }, [searchCards, currentPage, search]);
+    return () => resetCards();
+  }, [searchCards, resetCards, currentPage, search]);
 
   return (
     <Content>
