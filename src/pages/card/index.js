@@ -8,7 +8,10 @@ const mapStateToProps = state => ({
   loadingDescription: selectors.getLoadingDescription(state),
   comics: selectors.getAllComics(state),
   events: selectors.getAllEvents(state),
-  series: selectors.getAllSeries(state)
+  series: selectors.getAllSeries(state),
+  hasMoreComics: selectors.hasMoreComics(state, 6),
+  hasMoreEvents: selectors.hasMoreEvents(state, 6),
+  hasMoreSeries: selectors.hasMoreSeries(state, 6)
 });
 
 const mapDispatchToProps = dispatch =>

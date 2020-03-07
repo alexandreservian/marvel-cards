@@ -4,7 +4,7 @@ import * as actions from '../../actions';
 
 function* searchCardSuccess({ meta }) {
   const { id } = meta;
-  const limit = 5;
+  const limit = 6;
   yield put(
     actions.searchComplementsCard({ type: types.API_SEARCH_COMICS, endpoint: 'comics', limit })({
       id

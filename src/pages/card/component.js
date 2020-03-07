@@ -6,6 +6,7 @@ import ButtonBackPage from 'components/button-back-page';
 import LoadingPage from 'components/loading-page';
 import Perfil from 'components/perfil';
 import Collection from 'components/collection';
+import LinkMoreCollection from 'components/link-more-collection';
 import { Content } from './style';
 
 type Props = {
@@ -14,7 +15,10 @@ type Props = {
   loadingDescription: Boolean,
   comics?: Array<any>,
   events?: Array<any>,
-  series?: Array<any>
+  series?: Array<any>,
+  hasMoreComics: Boolean,
+  hasMoreEvents: Boolean,
+  hasMoreSeries: Boolean
 };
 
 const Card = ({
@@ -23,7 +27,10 @@ const Card = ({
   loadingDescription,
   comics,
   events,
-  series
+  series,
+  hasMoreComics,
+  hasMoreEvents,
+  hasMoreSeries
 }: Props): React.Node => {
   const { id } = useParams();
   const visibleComics = !!comics.length;
@@ -42,8 +49,11 @@ const Card = ({
       <LoadingPage visible={loadingDescription} />
       <Perfil {...card} visible={!loadingDescription} />
       <Collection data={comics} title="Comics" icon="book-open" visible={visibleComics} />
+      <LinkMoreCollection text="See more Comics" to={`${id}/comics`} visible={hasMoreComics} />
       <Collection data={events} title="Events" icon="calendar" visible={visibleEvents} />
+      <LinkMoreCollection text="See more Events" to={`${id}/events`} visible={hasMoreEvents} />
       <Collection data={series} title="Series" icon="layers" visible={visibleSeries} />
+      <LinkMoreCollection text="See more Series" to={`${id}/series`} visible={hasMoreSeries} />
     </Content>
   );
 };
