@@ -3,6 +3,7 @@
     stages:
       - build
       - test
+      - deploy
 
     cache:
       paths:
@@ -19,3 +20,7 @@
     testing_testing:
       stage: test
       script: npm test
+    
+    deploy_project:
+      stage: deploy
+      script: npm run build
