@@ -42,11 +42,6 @@ export const Title = styled.h1`
   padding: 0 0 0 10px;
 `;
 
-export const BoxDescription = styled.div`
-  margin: 15px 0 0 0;
-  font-size: 1.2em;
-`;
-
 export const BoxLinks = styled.div`
   margin: 20px 0 0 0;
 `;

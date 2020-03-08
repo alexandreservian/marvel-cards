@@ -3,7 +3,8 @@ import React, { memo } from 'react';
 import visibleComponentHoc from 'components/visible-component-hoc';
 import LinkMoreInformation from 'components/link-more-information';
 import ThumbnailPerfil from 'components/thumbnail-perfil';
-import { Content, BoxImage, Box, Title, BoxDescription, BoxLinks } from './style';
+import DescriptionPerfil from 'components/description-perfil';
+import { Content, BoxImage, Box, Title, BoxLinks } from './style';
 
 type Props = {
   name: String,
@@ -11,10 +12,19 @@ type Props = {
   thumbnail: String,
   detail: String,
   wiki: String,
-  comiclink: String
+  comiclink: String,
+  onSubmit?: Function
 };
 
-const Perfil = ({ name, description, thumbnail, detail, wiki, comiclink }: Props): React.Node => {
+const Perfil = ({
+  name,
+  description,
+  thumbnail,
+  detail,
+  wiki,
+  comiclink,
+  onSubmit
+}: Props): React.Node => {
   return (
     <Content>
       <BoxImage>
@@ -22,7 +32,7 @@ const Perfil = ({ name, description, thumbnail, detail, wiki, comiclink }: Props
       </BoxImage>
       <Box>
         <Title>{name}</Title>
-        <BoxDescription>{description}</BoxDescription>
+        <DescriptionPerfil text={description} onSubmit={onSubmit} />
         <BoxLinks>
           <LinkMoreInformation
             url={wiki}
@@ -40,6 +50,10 @@ const Perfil = ({ name, description, thumbnail, detail, wiki, comiclink }: Props
       </Box>
     </Content>
   );
+};
+
+Perfil.defaultProps = {
+  onSubmit: () => {}
 };
 
 export default memo(visibleComponentHoc(Perfil));

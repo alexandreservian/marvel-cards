@@ -22,6 +22,11 @@ type Props = {
   resetCard: Function
 };
 
+const handleOnSubmit = (onSubmit, id) => value => {
+  console.log(id);
+  console.log(value);
+};
+
 const Card = ({
   card,
   searchCard,
@@ -50,7 +55,7 @@ const Card = ({
         <ButtonBackPage />
       </Header>
       <LoadingPage visible={loadingDescription} />
-      <Perfil {...card} visible={!loadingDescription} />
+      <Perfil {...card} visible={!loadingDescription} onSubmit={handleOnSubmit(1, id)} />
       <Collection data={comics} title="Comics" icon="book-open" visible={visibleComics} />
       <LinkMoreCollection text="See more Comics" to={`${id}/comics`} visible={hasMoreComics} />
       <Collection data={events} title="Events" icon="calendar" visible={visibleEvents} />

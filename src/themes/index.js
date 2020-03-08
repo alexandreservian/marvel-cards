@@ -5,7 +5,8 @@ const theme = {
     bgBody: '#f5b353',
     bgPagination: '#393a3e',
     disabledNav: '#906d3a',
-    colorIconLink: '#BC042C'
+    colorIconLink: '#BC042C',
+    colorIconButton: '#048444'
   }
 };
 
