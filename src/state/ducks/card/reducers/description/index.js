@@ -11,10 +11,12 @@ export const INITIAL_STATE = {
 };
 
 const success = (state, { payload }) => ({ ...state, data: { ...payload } });
+const update = (state, { payload }) => ({ ...state, data: { ...state.data, ...payload } });
 
 const reducer = handleActions(
   {
-    [`${types.API_SEARCH_CARD}_SUCCESS`]: success
+    [`${types.API_SEARCH_CARD}_SUCCESS`]: success,
+    [types.UPDATE_DESCRIPTION]: update
   },
   INITIAL_STATE
 );

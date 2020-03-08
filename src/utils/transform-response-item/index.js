@@ -1,10 +1,10 @@
-const transformResponseItem = (response = {}) => {
+const transformResponseItem = (changes = {}) => (response = {}) => {
   const {
     data: { results }
   } = response;
   const [result] = results;
 
-  return { ...result };
+  return { ...result, ...changes };
 };
 
 export default transformResponseItem;

@@ -11,9 +11,8 @@ type Props = {
 
 const handleOnClick = setActiveForm => () => setActiveForm(true);
 
-const handleOnSubmit = (setActiveForm, setDescription, onSubmit) => ({ description }) => {
+const handleOnSubmit = (setActiveForm, onSubmit) => ({ description }) => {
   setActiveForm(false);
-  setDescription(description);
   onSubmit(description);
 };
 
@@ -27,14 +26,13 @@ const showContent = (text = '') => {
 };
 
 const DescriptionPerfil = ({ text, onSubmit }: Props): React.Node => {
-  const [description, setDescription] = useState(text);
   const [activeForm, setActiveForm] = useState(false);
   return (
     <Content>
-      {!activeForm && showContent(description)}
+      {!activeForm && showContent(text)}
       <FormDescription
-        description={description}
-        onSubmit={handleOnSubmit(setActiveForm, setDescription, onSubmit)}
+        description={text}
+        onSubmit={handleOnSubmit(setActiveForm, onSubmit)}
         visible={activeForm}
       />
       {!activeForm && (

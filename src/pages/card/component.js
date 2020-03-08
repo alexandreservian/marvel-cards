@@ -19,12 +19,12 @@ type Props = {
   hasMoreComics: Boolean,
   hasMoreEvents: Boolean,
   hasMoreSeries: Boolean,
-  resetCard: Function
+  resetCard: Function,
+  changeDescription: Function
 };
 
-const handleOnSubmit = (onSubmit, id) => value => {
-  console.log(id);
-  console.log(value);
+const handleOnSubmit = (changeDescription, id) => description => {
+  changeDescription({ id, description });
 };
 
 const Card = ({
@@ -37,7 +37,8 @@ const Card = ({
   hasMoreComics,
   hasMoreEvents,
   hasMoreSeries,
-  resetCard
+  resetCard,
+  changeDescription
 }: Props): React.Node => {
   const { id } = useParams();
   const visibleComics = !!comics.length;
@@ -55,7 +56,11 @@ const Card = ({
         <ButtonBackPage />
       </Header>
       <LoadingPage visible={loadingDescription} />
-      <Perfil {...card} visible={!loadingDescription} onSubmit={handleOnSubmit(1, id)} />
+      <Perfil
+        {...card}
+        visible={!loadingDescription}
+        onSubmit={handleOnSubmit(changeDescription, id)}
+      />
       <Collection data={comics} title="Comics" icon="book-open" visible={visibleComics} />
       <LinkMoreCollection text="See more Comics" to={`${id}/comics`} visible={hasMoreComics} />
       <Collection data={events} title="Events" icon="calendar" visible={visibleEvents} />

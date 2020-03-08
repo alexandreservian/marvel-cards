@@ -29,6 +29,17 @@ const resetComics = createAction(types.RESET_COMICS);
 const resetEvents = createAction(types.RESET_EVENTS);
 const resetSeries = createAction(types.RESET_SERIES);
 
+const changeDescription = createAction(
+  types.CHANGE_DESCRIPTION,
+  () => {},
+  ({ description = 0, id = 0 } = {}) => ({
+    description,
+    id
+  })
+);
+
+const updateDescription = createAction(types.UPDATE_DESCRIPTION, description => ({ description }));
+
 export {
   searchCard,
   searchComics,
@@ -38,5 +49,7 @@ export {
   resetDescription,
   resetComics,
   resetEvents,
-  resetSeries
+  resetSeries,
+  changeDescription,
+  updateDescription
 };
