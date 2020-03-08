@@ -21,6 +21,7 @@ const Search = ({ onSearch, defaultValue }: Props): React.Node => {
       <BoxSearch>
         <Icon name="search" className="icon" />
         <input
+          data-testid="input"
           type="text"
           placeholder="Find your favorite Marvel Hero!"
           className="input"

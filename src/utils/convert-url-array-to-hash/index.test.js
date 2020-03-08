@@ -27,4 +27,15 @@ describe('convertUrlArrayToHash', () => {
     const result = { detail: 'google.com.br', wiki: 'facebook.com.br' };
     expect(convertUrlArrayToHash(example)).toStrictEqual(result);
   });
+  test('convertUrlArrayToHash(7) should throw a TypeError with message "The parameter must be an array"', () => {
+    let error;
+
+    try {
+      convertUrlArrayToHash(7);
+    } catch (e) {
+      error = e.message;
+    }
+
+    expect(error).toBe('The parameter must be an array');
+  });
 });

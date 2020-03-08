@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component renders 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1qx7s6a"
+  >
+    <div
+      class="css-1db4zkn"
+      width="95"
+    >
+      <img
+        alt="logo"
+        src="marvel-logo.svg"
+      />
+    </div>
+    <div
+      class="css-ftmyaz"
+    >
+      <i
+        class="icon-search icon"
+      />
+      <input
+        class="input"
+        data-testid="input"
+        placeholder="Find your favorite Marvel Hero!"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
