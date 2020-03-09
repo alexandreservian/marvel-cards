@@ -6,7 +6,7 @@ import { Content } from './style';
 const LoadingPage = (): React.Node => {
   return (
     <Content>
-      <div className="sk-cube-grid">
+      <div className="sk-cube-grid" data-testid="loading">
         <div className="sk-cube sk-cube1"></div>
         <div className="sk-cube sk-cube2"></div>
         <div className="sk-cube sk-cube3"></div>

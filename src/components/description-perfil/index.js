@@ -19,9 +19,9 @@ const handleOnSubmit = (setActiveForm, onSubmit) => ({ description }) => {
 const showContent = (text = '') => {
   const hasText = !!text;
   return hasText ? (
-    <ContentIn>{text}</ContentIn>
+    <ContentIn data-testid="description-content">{text}</ContentIn>
   ) : (
-    <ContentIn>Hero doesn't have description.</ContentIn>
+    <ContentIn data-testid="description-content">Hero doesn't have description.</ContentIn>
   );
 };
 
@@ -36,7 +36,11 @@ const DescriptionPerfil = ({ text, onSubmit }: Props): React.Node => {
         visible={activeForm}
       />
       {!activeForm && (
-        <Button type="button" onClick={handleOnClick(setActiveForm)}>
+        <Button
+          type="button"
+          onClick={handleOnClick(setActiveForm)}
+          data-testid="button-change-description"
+        >
           <Icon name="edit-3" className="icon" />
           <span>Change Description</span>
         </Button>

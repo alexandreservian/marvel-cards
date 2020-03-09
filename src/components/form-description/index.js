@@ -10,9 +10,14 @@ const FormDescription = () => {
       <Form>
         <BoxField>
           <label htmlFor="description">Description:</label>
-          <FastField component="textarea" name="description" rows="4" />
+          <FastField
+            component="textarea"
+            name="description"
+            rows="4"
+            data-testid="textarea-description"
+          />
         </BoxField>
-        <Button type="submit">
+        <Button type="submit" data-testid="submit">
           <Icon name="check-circle" className="icon" />
           <span>Save</span>
         </Button>

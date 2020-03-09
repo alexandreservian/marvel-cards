@@ -10,7 +10,7 @@ type Props = {
 
 const List = ({ cards }: Props): React.Node => {
   return (
-    <Content>
+    <Content data-testid="list-cards">
       {cards.map(({ id, name, thumbnail }) => (
         <Card key={id} id={id} name={name} thumbnail={thumbnail} />
       ))}

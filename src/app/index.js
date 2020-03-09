@@ -7,18 +7,22 @@ import RoutersApp from 'routes';
 import store from 'state/store';
 import theme from 'themes';
 
-const App = () => {
+export const App = () => (
+  <Provider store={store}>
+    <QueryParamProvider ReactRouterRoute={Route}>
+      <ThemeProvider theme={theme}>
+        <RoutersApp />
+      </ThemeProvider>
+    </QueryParamProvider>
+  </Provider>
+);
+
+const AppWithRouter = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <QueryParamProvider ReactRouterRoute={Route}>
-          <ThemeProvider theme={theme}>
-            <RoutersApp />
-          </ThemeProvider>
-        </QueryParamProvider>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   );
 };
 
-export default App;
+export default AppWithRouter;

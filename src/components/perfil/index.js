@@ -31,7 +31,7 @@ const Perfil = ({
         <ThumbnailPerfil src={thumbnail} alt={name} />
       </BoxImage>
       <Box>
-        <Title>{name}</Title>
+        <Title data-testid="title-hero">{name}</Title>
         <DescriptionPerfil text={description} onSubmit={onSubmit} />
         <BoxLinks>
           <LinkMoreInformation
@@ -39,12 +39,14 @@ const Perfil = ({
             text="Read more on Wiki"
             icon="plus-circle"
             visible={!!wiki}
+            dataTestid="link-wiki"
           />
           <LinkMoreInformation
             url={detail}
             text="Read more details of comic"
             icon="bookmark"
             visible={!!detail}
+            dataTestid="link-detail"
           />
         </BoxLinks>
       </Box>

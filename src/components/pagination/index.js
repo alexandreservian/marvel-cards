@@ -26,7 +26,7 @@ const ButtonNext = () => (
 
 const Pagination = ({ pageCount, onPageChange, initialPage }: Props): React.Node => {
   return (
-    <Content>
+    <Content data-testid="pagination">
       <ReactPaginate
         previousLabel={<ButtonPrev />}
         nextLabel={<ButtonNext />}

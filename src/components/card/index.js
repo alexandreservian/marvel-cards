@@ -12,7 +12,7 @@ type Props = {
 
 const Card = ({ id, name, thumbnail }: Props): React.Node => {
   return (
-    <Content>
+    <Content data-testid="cards">
       <Hexagon>
         <Link to={`../card-list/${id}`} className="link">
           <FadeIn easing={'ease-out'}>

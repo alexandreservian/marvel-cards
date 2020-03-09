@@ -8,12 +8,13 @@ type Props = {
   url: String,
   text: String,
   icon: String,
-  className?: String
+  className?: String,
+  dataTestid?: String
 };
 
-const LinkMoreInformation = ({ url, text, icon, className }: Props): React.Node => {
+const LinkMoreInformation = ({ url, text, icon, className, dataTestid }: Props): React.Node => {
   return (
-    <Content className={className}>
+    <Content className={className} data-testid={dataTestid}>
       <Link href={url} target="_blank" rel="noopener noreferrer">
         <Icon name={icon} className="icon" />
         <span>{text}</span>
